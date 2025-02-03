@@ -41,7 +41,7 @@ namespace PositionsService.Services
             }
             catch (Exception ex) 
             {
-                Console.WriteLine("Something went wrong when trying to load positions from file." ex);
+                Console.WriteLine("Something went wrong when trying to load positions from file." , ex.Message);
             }
         }
 
@@ -67,7 +67,8 @@ namespace PositionsService.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Something went wrong when trying to calculate profits and losses." ex);
+                Console.WriteLine("Something went wrong when trying to calculate profits and losses.", ex.Message);
+                return "";
             }
         }
     }
