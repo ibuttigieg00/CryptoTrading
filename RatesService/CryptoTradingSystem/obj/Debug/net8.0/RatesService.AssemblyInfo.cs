@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RatesService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1debd7268a05e7895e1dbd263871e1a5169f75f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0311d434c0b0a5678f2f2f9b4f15f02ce49636d")]
 [assembly: System.Reflection.AssemblyProductAttribute("RatesService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RatesService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

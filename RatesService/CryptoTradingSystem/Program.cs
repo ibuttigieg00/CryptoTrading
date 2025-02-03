@@ -1,10 +1,12 @@
 using RatesService.Services;
+using RatesService.EventBus;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Register HttpClient for RateFetcherService (dependency injection)
 builder.Services.AddHttpClient<RateFetcherService>(); // Calls constructor in RateFetcherService
+builder.Services.AddSingleton<IEventBus, RabbitMQProducer>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

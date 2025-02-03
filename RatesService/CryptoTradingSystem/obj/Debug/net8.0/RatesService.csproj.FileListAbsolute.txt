@@ -35,3 +35,6 @@ D:\Projects\CryptoTrading\RatesService\CryptoTradingSystem\obj\Debug\net8.0\refi
 D:\Projects\CryptoTrading\RatesService\CryptoTradingSystem\obj\Debug\net8.0\RatesService.pdb
 D:\Projects\CryptoTrading\RatesService\CryptoTradingSystem\obj\Debug\net8.0\RatesService.genruntimeconfig.cache
 D:\Projects\CryptoTrading\RatesService\CryptoTradingSystem\obj\Debug\net8.0\ref\RatesService.dll
+D:\Projects\CryptoTrading\RatesService\CryptoTradingSystem\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Projects\CryptoTrading\RatesService\CryptoTradingSystem\bin\Debug\net8.0\RabbitMQ.Client.dll
+D:\Projects\CryptoTrading\RatesService\CryptoTradingSystem\bin\Debug\net8.0\Resources\Rates.json
