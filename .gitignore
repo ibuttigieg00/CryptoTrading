@@ -7,3 +7,7 @@ RatesService/.vs/CryptoTradingSystem/v17/DocumentLayout.json
 *.dll
 *.exe
 *.pdb
+*.Up2Date
+*.BuildWithSkipAnalyzers
+*.props
+*.targets
