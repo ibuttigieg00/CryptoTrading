@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "RatesService.Controllers.RatesController",
+    "Method": "GetRates",
+    "RelativePath": "api/Rates/getlatestrates",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
