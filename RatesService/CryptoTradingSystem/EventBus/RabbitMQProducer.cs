@@ -7,6 +7,7 @@ namespace RatesService.EventBus
     public interface IEventBus
     {
         void PublishRateChange(string symbol, decimal newRate);
+        void Close();
     }
 
     public class RabbitMQProducer : IEventBus
@@ -27,7 +28,6 @@ namespace RatesService.EventBus
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
 
-            // Declare a queue (make sure it exists)
             _channel.QueueDeclare(queue: _queueName,
                                  durable: false,
                                  exclusive: false,
@@ -52,7 +52,6 @@ namespace RatesService.EventBus
             Console.WriteLine($" [x] Sent '{message}'");
         }
 
-        // Close the connection when done
         public void Close()
         {
             _channel.Close();

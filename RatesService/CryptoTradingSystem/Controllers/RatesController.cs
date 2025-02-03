@@ -21,8 +21,22 @@ namespace RatesService.Controllers
         [HttpGet("getlatestrates")]
         public async Task<IActionResult> GetRates()
         {
-            var rates = await _rateFetcherService.GetRatesAsync();
-            return Ok(rates);
+            try
+            {
+                var ratesResponse = await _rateFetcherService.GetRatesAsync();
+                
+                if (ratesResponse.IsSuccessStatusCode)
+                {
+                    var content = await ratesResponse.Content.ReadAsStringAsync();
+                    return Content(content, "text/plain");
+                }
+
+                return StatusCode((int)ratesResponse.StatusCode, await ratesResponse.Content.ReadAsStringAsync());
+            }
+            catch (Exception ex) 
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
         }
     }
 }

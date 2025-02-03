@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using RatesService.EventBus;
 using RatesService.Models;
 using System.Net;
@@ -28,7 +27,7 @@ namespace RatesService.Services
             try
             {
                 var request = new HttpRequestMessage(HttpMethod.Get, _baseUrl);
-                request.Headers.Add("X-CMC_PRO_API_KEY", _apiKey); // Replace with actual header name
+                request.Headers.Add("X-CMC_PRO_API_KEY", _apiKey);
 
                 var response = await _httpClient.SendAsync(request);
 
@@ -40,7 +39,7 @@ namespace RatesService.Services
                     bool bisPercentageChanged = _rateChecker.CheckPercentageChange();
 
                     var message = bisPercentageChanged
-                               ? "Percentage change has been detected."
+                               ? "A significant percentage change of 5 or more has been detected."
                                : "No significant percentage change detected.";
 
                     return new HttpResponseMessage(HttpStatusCode.OK)

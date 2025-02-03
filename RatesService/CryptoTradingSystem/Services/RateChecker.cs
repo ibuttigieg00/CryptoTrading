@@ -23,6 +23,8 @@ namespace RatesService.Services
 
         public bool CheckPercentageChange()
         {
+            bool bIsGreaterThan5 = false;
+
             if (_rateCurrent.Count > 0 && _rateHistory.Count > 0)
             {
                 foreach(var symbol in _rateHistory.Keys)
@@ -35,19 +37,26 @@ namespace RatesService.Services
                         if (oldPrice > 0) // Prevent division by zero
                         {
                             decimal percentageChange = ((newPrice - oldPrice) / oldPrice) * 100;
-
+                        
                             if (Math.Abs(percentageChange) >= 5) // Change greater than 5%?
                             {
                                 string message = $"Stock: {symbol}, Old Price: {oldPrice}, New Price: {newPrice}, Change: {percentageChange:F2}%";
                                 Console.WriteLine($"Sending to RabbitMQ: {message}");
                                 _eventBus.PublishRateChange(symbol, newPrice);
+                                bIsGreaterThan5 = true;
                             }
 
                             UpdateRates(symbol, newPrice, _rateCurrent[symbol].LastUpdated);
                         }
                     }
                 }
-                return true;
+
+                if(bIsGreaterThan5)
+                {
+                    _eventBus.Close();
+                    return true;
+                }
+                return false;
             }
             else
             {
