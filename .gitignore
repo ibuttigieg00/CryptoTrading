@@ -4,3 +4,6 @@ RatesService/.vs/CryptoTradingSystem/v17/DocumentLayout.json
 *.v2
 *.vsidx
 *.cache
+*.dll
+*.exe
+*.pdb
